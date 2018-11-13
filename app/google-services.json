@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "969282403422",
+    "firebase_url": "https://testworld-a810d.firebaseio.com",
+    "project_id": "testworld-a810d",
+    "storage_bucket": "testworld-a810d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969282403422:android:9065706d52856d9a",
+        "android_client_info": {
+          "package_name": "com.techhouse.apps.testworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969282403422-4jnno2sjof8toft6a8gtocj318k6q3ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techhouse.apps.testworld",
+            "certificate_hash": "a777dc154422182a7893d0d13c5ba26c89daae04"
+          }
+        },
+        {
+          "client_id": "969282403422-58fg1d5dijnhtq8jorqgp651r950jro2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF1osqYBL2nlS10gLkX0iOSv_ZGjRcpGk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969282403422-58fg1d5dijnhtq8jorqgp651r950jro2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

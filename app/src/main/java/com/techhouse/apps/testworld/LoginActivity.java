@@ -1,6 +1,7 @@
 package com.techhouse.apps.testworld;
 
         import android.content.Intent;
+        import android.support.annotation.NonNull;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.util.Log;
@@ -11,12 +12,15 @@ package com.techhouse.apps.testworld;
         import com.firebase.ui.auth.AuthUI;
         import com.firebase.ui.auth.ErrorCodes;
         import com.firebase.ui.auth.IdpResponse;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.auth.AuthResult;
         import com.google.firebase.auth.FirebaseAuth;
 
         import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btn_login = findViewById(R.id.LoginAct_btn_login);
+    Button btn_login;
 
     FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 7001;
@@ -25,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        btn_login  = findViewById(R.id.LoginAct_btn_login);
 
         // Authentication
         mAuth = FirebaseAuth.getInstance();
@@ -46,15 +52,24 @@ public class LoginActivity extends AppCompatActivity {
             Intent i = new Intent(this, LandingActivity.class);
             startActivity(i);
         } else {
+
+            /*mAuth.createUserWithEmailAndPassword("david.hornung90@gmail.com", "test1234")
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                        }
+                    });
+*/
             // Start FirebaseUI
-            startActivityForResult(
+            AuthUI.IdpConfig emailIdp = new AuthUI.IdpConfig.EmailBuilder().build();
+
+            /*startActivityForResult(
                     AuthUI.getInstance()
                             .createSignInIntentBuilder()
-                            .setAvailableProviders(Arrays.asList(
-                                    new AuthUI.IdpConfig.EmailBuilder().build()))
-                            .setIsSmartLockEnabled(false)
+                            .setAvailableProviders(Arrays.asList(emailIdp))
                             .build(),
-                    RC_SIGN_IN);
+                    RC_SIGN_IN);*/
         }
     }
 
