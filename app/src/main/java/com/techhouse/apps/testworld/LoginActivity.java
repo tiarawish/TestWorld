@@ -53,23 +53,13 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
         } else {
 
-            /*mAuth.createUserWithEmailAndPassword("david.hornung90@gmail.com", "test1234")
+            mAuth.createUserWithEmailAndPassword("david.hornung90@gmail.com", "test1234")
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                         }
                     });
-*/
-            // Start FirebaseUI
-            AuthUI.IdpConfig emailIdp = new AuthUI.IdpConfig.EmailBuilder().build();
-
-            /*startActivityForResult(
-                    AuthUI.getInstance()
-                            .createSignInIntentBuilder()
-                            .setAvailableProviders(Arrays.asList(emailIdp))
-                            .build(),
-                    RC_SIGN_IN);*/
         }
     }
 

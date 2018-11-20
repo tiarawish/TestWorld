@@ -1,0 +1,57 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/RegisterAct_tv_welcome"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:padding="50dp"/>
+
+    <EditText
+        android:id="@+id/RegisterAct_et_firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Firstname"
+        android:inputType="text"/>
+    
+    <EditText
+        android:id="@+id/RegisterAct_et_lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lastname"
+        android:inputType="text"/>
+    
+    <EditText
+        android:id="@+id/RegisterAct_et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fui_email_hint"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/RegisterAct_et_pass1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fui_password_hint"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/RegisterAct_et_pass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fui_password_hint2"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/RegisterAct_btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/RegisterAct_btn_regNow"/>
+
+</LinearLayout>
