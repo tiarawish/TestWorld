@@ -1,12 +1,17 @@
 <resources>
     <string name="app_name">TestWorld</string>
 
-    <string name="LoginAct_btn_Login">LOGIN</string>
     <string name="no_internet_connection">No data connection available.</string>
-    <string name="sign_in_cancelled">Sign in was cancelled...</string>
+    <string name="sign_in_cancelled">Sign in was cancelled…</string>
+
     <string name="RegisterAct_tv_welcome">Welcome to FestyTicket</string>
-    <string name="fui_password_hint2">Repeat Password</string>
     <string name="RegisterAct_btn_regNow">Register Now</string>
-    <string name="fui_password_no_match">Passwords do not match...</string>
-    <string name="fui_email_not_valid">Email is not valid...</string>
+
+    <string name="LoginAct_btn_Login">LOGIN</string>
+
+    <string name="fui_password_no_match">Passwords do not match…</string>
+    <string name="fui_email_not_valid">Email is not valid…</string>
+    <string name="fui_lastname_hint">Lastname</string>
+    <string name="fui_firstname_hint">Firstname</string>
+    <string name="fui_password_hint2">Repeat Password</string>
 </resources>
