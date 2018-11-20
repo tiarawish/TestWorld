@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    Toast.makeText(RegisterActivity.this, "Success. User created.", Toast.LENGTH_SHORT).show();
+                   //Toast.makeText(RegisterActivity.this, "Success. User created.", Toast.LENGTH_SHORT).show();
                 }
         });
     }
