@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         sPass1 = et_pass1.getText().toString();
         sPass2 = et_pass2.getText().toString();
 
-        if (sPass1 != sPass2) {
+        if (sPass1.equals(sPass2)) {
             Toast.makeText(getApplicationContext(), getString(R.string.fui_password_no_match), Toast.LENGTH_LONG).show();
             return;
         }
