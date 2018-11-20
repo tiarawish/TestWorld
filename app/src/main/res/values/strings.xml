@@ -8,6 +8,7 @@
     <string name="RegisterAct_btn_regNow">Register Now</string>
 
     <string name="LoginAct_btn_Login">LOGIN</string>
+    <string name="LoginAct_btn_Register">Register Now</string>
 
     <string name="fui_password_no_match">Passwords do not match…</string>
     <string name="fui_email_not_valid">Email is not valid…</string>

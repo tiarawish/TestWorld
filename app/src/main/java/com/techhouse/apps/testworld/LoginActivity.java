@@ -34,14 +34,22 @@ public class LoginActivity extends AppCompatActivity {
 
         // Authentication
         mAuth = FirebaseAuth.getInstance();
-
+        if (mAuth.getCurrentUser() != null) {
+            mAuth.signOut();
+        }
         // Interface
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startLoginProcess();
+                //startLoginProcess();
+                startRegisterActivity();
             }
         });
+    }
+
+    private void startRegisterActivity(){
+        Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+        startActivity(i);
     }
 
     private void startMainActivity() {
@@ -57,7 +65,11 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), task.getException().getMessage().toString(), Toast.LENGTH_LONG).show();
+                            }
                         }
                     });
         }
