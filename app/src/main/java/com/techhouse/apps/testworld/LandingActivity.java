@@ -24,10 +24,10 @@ public class LandingActivity extends AppCompatActivity {
         // Authentication
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() == null) {
-            tv_intro.setText("No User logged in...");
+            tv_intro.setText(getString(R.string.NoUserLogin));
         } else {
             mUser = mAuth.getCurrentUser();
-            tv_intro.setText("User: " + mUser.getDisplayName());
+            tv_intro.setText(getString(R.string.UserFlag) + mUser.getDisplayName());
         }
     }
 }

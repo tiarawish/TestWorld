@@ -15,4 +15,9 @@
     <string name="fui_lastname_hint">Lastname</string>
     <string name="fui_firstname_hint">Firstname</string>
     <string name="fui_password_hint2">Repeat Password</string>
+    <string name="NoUserLogin">No User logged in...</string>
+
+    <!-- User Interface -->
+    <string name="UserFlag">User:</string>
+
 </resources>

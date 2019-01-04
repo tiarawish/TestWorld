@@ -42,7 +42,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //startLoginProcess();
-                startRegisterActivity();
+                startFirebaseUIAuth();
+                //startRegisterActivity();
             }
         });
     }
@@ -52,7 +53,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void startMainActivity() {
+    private void startFirebaseUIAuth(){
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null ) {
+
+        } else {
+            startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),RC_SIGN_IN);
+        }
     }
 
     private void startLoginProcess() {
