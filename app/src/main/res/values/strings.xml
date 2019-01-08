@@ -20,4 +20,7 @@
     <!-- User Interface -->
     <string name="UserFlag">User:</string>
 
+    <!-- Error -->
+    <string name="went_wrong">Something went wrong...</string>
+
 </resources>
