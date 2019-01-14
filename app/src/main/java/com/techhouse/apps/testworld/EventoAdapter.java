@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class EventoAdapter extends FirestoreRecyclerAdapter<Evento, EventoAdapter.EventoHolder> {
+
+    private onItemClickListener listener;
 
     public EventoAdapter(@NonNull FirestoreRecyclerOptions<Evento> options) {
         super(options);
@@ -40,6 +43,24 @@ public class EventoAdapter extends FirestoreRecyclerAdapter<Evento, EventoAdapte
             textViewTitle = itemView.findViewById(R.id.text_view_title2);
             textViewDescription = itemView.findViewById(R.id.text_view_description2);
             textViewDate = itemView.findViewById(R.id.text_view_priority2);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null){
+                        listener.onItemClick(getSnapshots().getSnapshot(position),position);
+                    }
+                }
+            });
         }
+    }
+
+    public interface  onItemClickListener {
+        void onItemClick(DocumentSnapshot documentSnapshot, int poistion);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
     }
 }
