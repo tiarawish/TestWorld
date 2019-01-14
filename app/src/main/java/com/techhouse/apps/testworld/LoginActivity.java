@@ -7,6 +7,7 @@ package com.techhouse.apps.testworld;
         import android.util.Log;
         import android.view.View;
         import android.widget.Button;
+        import android.widget.TextView;
         import android.widget.Toast;
 
         import com.firebase.ui.auth.AuthUI;
@@ -24,7 +25,9 @@ package com.techhouse.apps.testworld;
         import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btn_login;
+    Button btn_login, button;
+
+    TextView tv_Login;
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
@@ -38,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btn_login  = findViewById(R.id.LoginAct_btn_login);
+        button = findViewById(R.id.button);
+        tv_Login = findViewById(R.id.textView);
 
         mFirestore = FirebaseFirestore.getInstance();
 
@@ -56,6 +61,30 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), List.class);
+                startActivity(i);
+            }
+        });
+
+        tv_Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doStuff();
+            }
+        });
+
+    }
+
+    private void doStuff() {
+        Evento e1 = new Evento("Test", "20.20.2000", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+        mFirestore.collection("events").add(e1);
+        Evento e2 = new Evento("Dummbumm", "11.11.1111" , "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged");
+        mFirestore.collection("events").add(e2);
+        Evento e3 = new Evento("Ulle", "14.14.1999", "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.");
+        mFirestore.collection("events").add(e3);
     }
 
     private void startFirebaseUIAuth(){
@@ -101,9 +130,10 @@ public class LoginActivity extends AppCompatActivity {
                                         Intent i = new Intent(LoginActivity.this, LandingActivity.class);
                                         startActivity(i);
                                         finish();
-                                    }
-                                    if (task.isComplete()) {
+                                    } else if (task.isComplete()) {
                                         Toast.makeText(LoginActivity.this, R.string.went_wrong, Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(LoginActivity.this, "Terribly wrong...",Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
